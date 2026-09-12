@@ -49,6 +49,17 @@ A mobile e-commerce application built with Flutter.
 
 ---
 
+## 🤖 AI Usage in Project
+
+The following AI tools and generated assets/code were utilized in this project:
+
+- **Gemini**: Used for generating the app icon image.
+- **Stitch**: Used for generating the UI Figma design file.
+- **AI Code Generation**:
+  - [`lib/core/utils/price_utils.dart`]: `calculateOriginalPrice` helper logic.
+
+---
+
 ## 🏛️ Architecture Decisions
 
 This application adopts a **Feature-First Architecture** combined with **Clean Architecture** principles:
@@ -64,6 +75,7 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
 ---
 
 ## 📋 Incomplete Tasks / TODO Checklist
+**FINAL DURATION = 09.21 AM GMT+8 until 12.08 PM GMT+8**
 
 - [x] 1. repo initialization (start 12/09/2026 09:21 GMT+8, done 12/09/2026 09:25 GMT+8)
 - [x] 2. define project structure (start 12/09/2026 09:25 GMT+8, done 12/09/2026 09:32 GMT+8)
@@ -80,9 +92,9 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
     - [x] setup services (done 12/09/2026 10:41 GMT+8)
     - [x] UI & API Integration - Header [search, brand information] (done 12/09/2026 10:57 GMT+8)
     - [x] UI & API Integration - Product list (done 12/09/2026 11:35 GMT+8)
-- [ ] 7. detail screen phase 1 (start 12/09/2026 11:35 GMT+8)
+- [x] 7. detail screen phase 1 (start 12/09/2026 11:35 GMT+8)
     - [x] API & Services integration (done 12/09/2026 11:41 GMT+8)
-    - [ ] UI Integration
+    - [x] UI Integration (done 12/09/2026 12:07 GMT+8)
 - [ ] 8. detail screen phase 2 
     - [ ] review section
     - [ ] dimention section
