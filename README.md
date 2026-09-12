@@ -66,7 +66,7 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
 ## 📋 Incomplete Tasks / TODO Checklist
 
 - [x] 1. repo initialization (start 12/09/2026 09:21 GMT+8, done 12/09/2026 09:25 GMT+8)
-- [x] 2. define project structure (start 12/09/2026 09:25 GMT+8, done )
+- [x] 2. define project structure (start 12/09/2026 09:25 GMT+8, done 12/09/2026 09:32 GMT+8)
 - [] 3. core (app theme, spacing, text theme, icon app, android manifest)
 - [] 4. dio setup
 - [] 5. splash screen
