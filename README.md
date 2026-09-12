@@ -67,11 +67,16 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
 
 - [x] 1. repo initialization (start 12/09/2026 09:21 GMT+8, done 12/09/2026 09:25 GMT+8)
 - [x] 2. define project structure (start 12/09/2026 09:25 GMT+8, done 12/09/2026 09:32 GMT+8)
-- [] 3. core (app theme, spacing, text theme, icon app, android manifest)
-- [] 4. dio setup
-- [] 5. splash screen
-- [] 6. home screen
-- [] 7. detail screen phase 1
+- [ ] 3. core (start 12/09/2026 09:33 GMT+8)
+  - [x] generate icon (done 12/09/2026 09:39 GMT+8)
+  - [ ] app theme
+  - [ ] spacing
+  - [ ] text theme
+  - [ ] android manifest
+- [ ] 4. dio setup
+- [ ] 5. splash screen
+- [ ] 6. home screen
+- [ ] 7. detail screen phase 1
 - [ ] 8. detail screen phase 2 (review section, dimention section, action add to cart based on minimum purchase)
 - [ ] 9. cart screen
 - [ ] 10. unit test
