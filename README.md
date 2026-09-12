@@ -73,7 +73,7 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
   - [x] spacing (done 12/09/2026 09:44 GMT+8)
   - [x] text style (done 12/09/2026 09:44 GMT+8)
   - [x] android manifest internet permissions (done 12/09/2026 09:47 GMT+8)
-- [ ] 4. dio setup
+- [x] 4. dio setup (start 12/09/2026 09:48 GMT+8, done 12/09/2026 09:55 GMT+8)
 - [ ] 5. splash screen
 - [ ] 6. home screen
 - [ ] 7. detail screen phase 1
