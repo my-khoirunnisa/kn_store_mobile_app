@@ -16,7 +16,7 @@ A mobile e-commerce application built with Flutter.
 1. **Clone repository & navigate to project directory:**
    ```bash
    git clone https://github.com/my-khoirunnisa/kn_store_mobile_app.git
-   cd kn_store_app
+   cd kn_store_mobile_app
    ```
 
 2. **Install dependencies:**
