@@ -1,17 +1,77 @@
-# kn_store_mobile_app
+# KN Store Mobile App
 
-A new Flutter project.
+A mobile e-commerce application built with Flutter.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 How to Run the App
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+- **Flutter SDK**: ^3.13.1 (or latest version)
+- **Dart SDK**
+- **Android Studio / VS Code** (with Flutter & Dart extensions)
+- **Emulator** (Android/iOS) or **Physical Device**
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### Steps to Run
+1. **Clone repository & navigate to project directory:**
+   ```bash
+   git clone https://github.com/my-khoirunnisa/kn_store_mobile_app.git
+   cd kn_store_app
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. **Install dependencies:**
+   ```bash
+   flutter pub get
+   ```
+
+3. *(Optional)* **Generate App Icon:**
+   ```bash
+   dart run icons_launcher:create
+   ```
+
+4. **Run the application:**
+   ```bash
+   flutter run
+   ```
+
+---
+
+## 🛠️ Tech Stack Used
+
+- **Framework**: [Flutter](https://flutter.dev/) (Dart SDK ^3.13.1)
+- **State Management**: [`provider`](https://pub.dev/packages/provider)
+- **HTTP & Networking**: [`dio`](https://pub.dev/packages/dio)
+- **Icons**: [`phosphoricons_flutter`](https://pub.dev/packages/phosphoricons_flutter), `cupertino_icons`
+- **UI & Effects**: [`shimmer`](https://pub.dev/packages/shimmer)
+- **Typography**: Custom Font (Plus Jakarta Sans)
+- **App Icon Generator**: [`icons_launcher`](https://pub.dev/packages/icons_launcher)
+- **Code Quality & Linter**: `flutter_lints`
+
+---
+
+## 🏛️ Architecture Decisions
+
+This application adopts a **Feature-First Architecture** combined with **Clean Architecture** principles:
+
+- **`lib/core/`**: Houses global modules including theme configurations (`theme/`), navigation routing (`routes/`), networking client (`network/`), utilities (`utils/`), constants (`constants/`), and reusable UI components (`widgets/`).
+- **`lib/features/`**: Each feature is modularized into dedicated folders (e.g., `splash_screen`, `home_screen`, `detail_screen`), divided into architectural layers:
+  - **`data/`**: Data providers, API calls, and repository implementation.
+  - **`domain/`**: Data models and business entities.
+  - **`presentation/`**: Screen UIs and feature-specific widgets.
+  - **`providers/`**: State managers based on `ChangeNotifier` to separate business logic from the UI.
+- **Routing**: Centralized within `AppRouter` (`lib/core/routes/app_router.dart`) for structured and declarative navigation across screens.
+
+---
+
+## 📋 Incomplete Tasks / TODO Checklist
+
+- [x] 1. repo initialization (start 12/09/2026 09:21 GMT+8, done 12/09/2026 09:25 GMT+8)
+- [x] 2. define project structure (start 12/09/2026 09:25 GMT+8, done )
+- [] 3. core (app theme, spacing, text theme, icon app, android manifest)
+- [] 4. dio setup
+- [] 5. splash screen
+- [] 6. home screen
+- [] 7. detail screen phase 1
+- [ ] 8. detail screen phase 2 (review section, dimention section, action add to cart based on minimum purchase)
+- [ ] 9. cart screen
+- [ ] 10. unit test
