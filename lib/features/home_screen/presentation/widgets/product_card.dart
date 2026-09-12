@@ -93,8 +93,6 @@ class ProductCard extends StatelessWidget {
     );
   }
 
-  // --- Subcomponents ---
-
   Widget _buildTitle() {
     return Text(
       product.title,

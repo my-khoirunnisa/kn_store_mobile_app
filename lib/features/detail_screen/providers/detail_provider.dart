@@ -17,6 +17,7 @@ class DetailProvider extends ChangeNotifier {
 
   Future<void> fetchProductDetail(int id) async {
     _error = null;
+    _product = null;
     _setLoading(true);
 
     try {
