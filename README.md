@@ -67,12 +67,12 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
 
 - [x] 1. repo initialization (start 12/09/2026 09:21 GMT+8, done 12/09/2026 09:25 GMT+8)
 - [x] 2. define project structure (start 12/09/2026 09:25 GMT+8, done 12/09/2026 09:32 GMT+8)
-- [ ] 3. core (start 12/09/2026 09:33 GMT+8)
+- [x] 3. core (start 12/09/2026 09:33 GMT+8)
   - [x] generate icon (done 12/09/2026 09:39 GMT+8)
-  - [ ] app theme
-  - [ ] spacing
-  - [ ] text theme
-  - [ ] android manifest
+  - [x] app theme colors (done 12/09/2026 09:44 GMT+8)
+  - [x] spacing (done 12/09/2026 09:44 GMT+8)
+  - [x] text style (done 12/09/2026 09:44 GMT+8)
+  - [x] android manifest internet permissions (done 12/09/2026 09:47 GMT+8)
 - [ ] 4. dio setup
 - [ ] 5. splash screen
 - [ ] 6. home screen
