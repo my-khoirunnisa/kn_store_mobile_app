@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kn_store_mobile_app/core/theme/app_colors.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
-class NetworkImage extends StatelessWidget {
+class CustomNetworkImage extends StatelessWidget {
   final String? imageUrl;
   final double? width;
   final double? height;
@@ -10,7 +10,7 @@ class NetworkImage extends StatelessWidget {
   final double iconSize;
   final BorderRadius? borderRadius;
 
-  const NetworkImage({
+  const CustomNetworkImage({
     super.key,
     required this.imageUrl,
     this.width,

@@ -1,11 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:kn_store_mobile_app/core/routes/app_router.dart';
 import 'package:kn_store_mobile_app/core/theme/app_colors.dart';
 import 'package:kn_store_mobile_app/core/theme/app_spacing.dart';
+import 'package:kn_store_mobile_app/core/widgets/empty_state.dart';
+import 'package:kn_store_mobile_app/core/widgets/error_state.dart';
 import 'package:kn_store_mobile_app/core/widgets/under_development_bottomsheet.dart';
 import 'package:kn_store_mobile_app/features/home_screen/presentation/widgets/app_bar_home.dart';
 import 'package:kn_store_mobile_app/features/home_screen/presentation/widgets/app_search_bar.dart';
+import 'package:kn_store_mobile_app/features/home_screen/presentation/widgets/grid_layout.dart';
+import 'package:kn_store_mobile_app/features/home_screen/presentation/widgets/product_card.dart';
+import 'package:kn_store_mobile_app/features/home_screen/presentation/widgets/product_skeleton.dart';
 import 'package:kn_store_mobile_app/features/home_screen/providers/home_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _searchController = TextEditingController();
   Timer? _debounce;
+
+  bool _isGridView = true;
 
   @override
   void initState() {
@@ -111,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             onChanged: _onSearch,
                           ),
                           const SizedBox(height: AppSpacing.lg),
+                          _buildBodyContent(provider),
                         ],
                       ),
                     ),
@@ -120,6 +129,134 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           },
         ),
+      ),
+    );
+  }
+
+  Widget _buildBodyContent(HomeProvider provider) {
+    if (provider.isLoading) {
+      return _buildSkeletonSection();
+    }
+
+    if (provider.error != null) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.xxl),
+        child: ErrorState(onAction: () => provider.getInitialProducts()),
+      );
+    }
+
+    if (provider.products.isEmpty) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.xxl),
+        child: EmptyState(
+          actionLabel: _searchController.text.isNotEmpty
+              ? 'Clear Search'
+              : 'Refresh',
+          onAction: () {
+            _searchController.clear();
+            provider.getInitialProducts();
+          },
+        ),
+      );
+    }
+
+    return _buildProductSection(provider);
+  }
+
+  Widget _buildSkeletonSection() {
+    return Column(
+      children: [
+        GridLayout(
+          isGridView: _isGridView,
+          itemCount: 6,
+          onViewModeChanged: (isGrid) => setState(() => _isGridView = isGrid),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        _buildProductContainer(
+          itemCount: 6,
+          itemBuilder: (context, index) =>
+              ProductSkeleton(isListView: !_isGridView),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildProductSection(HomeProvider provider) {
+    final products = provider.products;
+    return Column(
+      children: [
+        GridLayout(
+          isGridView: _isGridView,
+          itemCount: products.length,
+          onViewModeChanged: (isGrid) => setState(() => _isGridView = isGrid),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        _buildProductContainer(
+          itemCount: products.length,
+          itemBuilder: (context, index) {
+            final product = products[index];
+            return ProductCard(
+              product: product,
+              isListView: !_isGridView,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRouter.detailScreen,
+                  arguments: product.id,
+                );
+              },
+              onAddToCart: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (context) {
+                    return const UnderDevelopmentBottomsheet();
+                  },
+                );
+              },
+            );
+          },
+        ),
+        if (provider.isLoadingMore) _buildLoadMoreIndicator(),
+      ],
+    );
+  }
+
+  Widget _buildProductContainer({
+    required int itemCount,
+    required IndexedWidgetBuilder itemBuilder,
+  }) {
+    if (_isGridView) {
+      return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: AppSpacing.md,
+          mainAxisSpacing: AppSpacing.md,
+          childAspectRatio: 0.54,
+        ),
+        itemCount: itemCount,
+        itemBuilder: itemBuilder,
+      );
+    }
+
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: itemCount,
+      separatorBuilder: (context, index) =>
+          const SizedBox(height: AppSpacing.md),
+      itemBuilder: itemBuilder,
+    );
+  }
+
+  Widget _buildLoadMoreIndicator() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: AppSpacing.lg),
+      child: Center(
+        child: CircularProgressIndicator(color: AppColors.secondary),
       ),
     );
   }
