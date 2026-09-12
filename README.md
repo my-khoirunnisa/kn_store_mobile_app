@@ -75,7 +75,11 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
   - [x] android manifest internet permissions (done 12/09/2026 09:47 GMT+8)
 - [x] 4. dio setup (start 12/09/2026 09:48 GMT+8, done 12/09/2026 09:55 GMT+8)
 - [x] 5. splash screen (start 12/09/2026 09:56 GMT+8, done 12/09/2026 10:15 GMT+8)
-- [ ] 6. home screen
+- [ ] 6. home screen (start 12/09/2026 10:16 GMT+8)
+  - [x] setup global widget empty state, error state, network image (done 12/09/2026 10:36 GMT+8)
+  - [ ] setup services
+  - [ ] UI & API Integration - Header [search, brand information]
+  - [ ] UI & API Integration - Product list 
 - [ ] 7. detail screen phase 1
 - [ ] 8. detail screen phase 2 (review section, dimention section, action add to cart based on minimum purchase)
 - [ ] 9. cart screen
