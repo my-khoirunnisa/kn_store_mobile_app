@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kn_store_mobile_app/core/network/api_client.dart';
 import 'package:kn_store_mobile_app/core/routes/app_router.dart';
 import 'package:kn_store_mobile_app/core/theme/app_colors.dart';
+import 'package:kn_store_mobile_app/features/home_screen/data/home_services.dart';
+import 'package:kn_store_mobile_app/features/home_screen/providers/home_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => HomeProvider(HomeServices(ApiClient())),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

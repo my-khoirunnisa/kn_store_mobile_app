@@ -77,8 +77,8 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
 - [x] 5. splash screen (start 12/09/2026 09:56 GMT+8, done 12/09/2026 10:15 GMT+8)
 - [ ] 6. home screen (start 12/09/2026 10:16 GMT+8)
   - [x] setup global widget empty state, error state, network image (done 12/09/2026 10:36 GMT+8)
-  - [ ] setup services
-  - [ ] UI & API Integration - Header [search, brand information]
+  - [x] setup services (done 12/09/2026 10:41 GMT+8)
+  - [x] UI & API Integration - Header [search, brand information] (done 12/09/2026 10:57 GMT+8)
   - [ ] UI & API Integration - Product list 
 - [ ] 7. detail screen phase 1
 - [ ] 8. detail screen phase 2 (review section, dimention section, action add to cart based on minimum purchase)
