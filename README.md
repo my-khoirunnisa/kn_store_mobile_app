@@ -74,7 +74,7 @@ This application adopts a **Feature-First Architecture** combined with **Clean A
   - [x] text style (done 12/09/2026 09:44 GMT+8)
   - [x] android manifest internet permissions (done 12/09/2026 09:47 GMT+8)
 - [x] 4. dio setup (start 12/09/2026 09:48 GMT+8, done 12/09/2026 09:55 GMT+8)
-- [ ] 5. splash screen
+- [x] 5. splash screen (start 12/09/2026 09:56 GMT+8, done 12/09/2026 10:15 GMT+8)
 - [ ] 6. home screen
 - [ ] 7. detail screen phase 1
 - [ ] 8. detail screen phase 2 (review section, dimention section, action add to cart based on minimum purchase)
